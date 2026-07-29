@@ -1,0 +1,275 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#58697a;
+    font-family:Arial, Helvetica, sans-serif;
+    color:#01050a;
+}
+
+.container{
+    width:80%;
+    max-width:900px;
+    margin:40px auto;
+    text-align:center;
+}
+
+h1{
+    color:#0f172a;
+    font-size:42px;
+    margin-bottom:20px;
+}
+
+h2{
+    color:#25324d;
+    margin-top:25px;
+    margin-bottom:15px;
+}
+
+h3{
+    color:#0f172a;
+    margin-bottom:10px;
+}
+
+img{
+    width:250px;
+    height:250px;
+    object-fit:cover;
+    border-radius:50%;
+    margin:25px;
+    padding:10px;
+
+    background:rgb(12, 12, 12);
+}
+
+.about{
+    background:white;
+    padding:25px;
+    margin-top:30px;
+    border-radius:10px;
+}
+
+.about p{
+    border:2px dotted #2563eb;
+    padding:15px;
+    margin-top:15px;
+    line-height:1.8;
+    text-align:justify;
+}
+
+.skills{
+    background:rgb(241, 238, 238);
+    margin-top:30px;
+    padding:25px;
+    border-radius:10px;
+}
+
+.skills ul{
+    list-style:none;
+}
+
+.skills li{
+    background:#2563eb;
+    color:white;
+    margin:10px auto;
+    width:220px;
+    padding:12px;
+    border-radius:8px;
+    font-weight:bold;
+}
+
+.contact{
+    margin-top:35px;
+    padding:20px;d
+}
+
+.contact a{
+    color:#2563eb;
+    text-decoration:none;
+    font-weight:bold;
+    margin:0 15px;
+}
+
+.contact a:hover{
+    color:#707c9e
+    text-decoration:underline;
+}
+
+footer{
+    width: 100%;
+    background-color: #0f172a;
+    color: white;
+    text-align:center;
+    margin-top: 30px;
+    padding: 20px;
+}
+
+
+/* =========================================================
+   NAVBAR (holds the greeting text and dark mode button)
+========================================================= */
+.navbar{
+    width:100%;
+    background:#0f172a;
+    padding:15px 25px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.navbar p{
+    color:white;
+    font-weight:bold;
+}
+
+#themeBtn{
+    background:#2563eb;
+    color:white;
+    border:none;
+    padding:10px 16px;
+    border-radius:8px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+#themeBtn:hover{
+    background:#1d4ed8;
+}
+
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+body.dark-mode{
+    background:#1a1a2e;
+    color:#f1f1f1;
+}
+
+body.dark-mode .about,
+body.dark-mode .skills,
+body.dark-mode .contact-form{
+    background:#25324d;
+    color:#f1f1f1;
+}
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3{
+    color:#f1f1f1;
+}
+
+body.dark-mode .about p{
+    border-color:#60a5fa;
+}
+
+
+/* =========================================================
+   HIDDEN HELPER CLASS (used by JS to show/hide elements)
+========================================================= */
+.hidden{
+    display:none;
+}
+
+
+/* =========================================================
+   ADD SKILL FORM
+========================================================= */
+.add-skill{
+    margin-top:20px;
+    display:flex;
+    justify-content:center;
+    gap:10px;
+}
+
+.add-skill input{
+    padding:10px;
+    border-radius:8px;
+    border:2px solid #2563eb;
+    width:200px;
+}
+
+.add-skill button{
+    background:#2563eb;
+    color:white;
+    border:none;
+    padding:10px 16px;
+    border-radius:8px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.add-skill button:hover{
+    background:#1d4ed8;
+}
+
+
+/* =========================================================
+   CONTACT FORM
+========================================================= */
+.contact-form{
+    background:white;
+    padding:25px;
+    margin-top:30px;
+    border-radius:10px;
+    text-align:left;
+}
+
+.contact-form h2{
+    text-align:center;
+}
+
+.contact-form label{
+    display:block;
+    margin-top:15px;
+    font-weight:bold;
+    color:#25324d;
+}
+
+.contact-form input,
+.contact-form textarea{
+    width:100%;
+    padding:10px;
+    margin-top:6px;
+    border-radius:8px;
+    border:2px solid #2563eb;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.contact-form textarea{
+    min-height:100px;
+    resize:vertical;
+}
+
+.contact-form button{
+    background:#2563eb;
+    color:white;
+    border:none;
+    padding:12px 20px;
+    margin-top:18px;
+    border-radius:8px;
+    font-weight:bold;
+    cursor:pointer;
+    display:block;
+    width:100%;
+}
+
+.contact-form button:hover{
+    background:#1d4ed8;
+}
+
+.error{
+    color:#dc2626;
+    font-size:14px;
+    display:block;
+    margin-top:4px;
+}
+
+#formSuccess{
+    color:#16a34a;
+    font-weight:bold;
+    text-align:center;
+    margin-top:15px;
+}

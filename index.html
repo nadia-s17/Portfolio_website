@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nadia Shaban | Portfolio</title>
+    <link rel="stylesheet" href="main_portfolio.css">
+</head>
+
+<body>
+
+<nav class="navbar">
+    <p id="greeting"></p>
+    <button id="themeBtn">🌙 Dark Mode</button>
+</nav>
+
+<div class="container">
+
+    <h1>Welcome to My Portfolio</h1>
+
+    <img src="Nad-232338334.jpg" alt="Nadia Shaban">
+
+    <h2>Hello, I'm Nadia Shaban</h2>
+
+    <div class="about">
+
+        <h3>About Me</h3>
+
+        <p>
+            My name is Nadia, a beginner web developer. I started my journey in web
+            development at an early stage after being inspired by a close relative
+            who is an experienced developer. Although I sometimes doubted myself,
+            joining Code Blossom strengthened my confidence and encouraged me to
+            continue learning because it supports women who want to pursue careers
+            in technology.
+        </p>
+
+        <p>
+            I enjoy learning HTML, CSS and JavaScript, and I look forward to
+            becoming a professional fullstack developer while continuing to improve
+            my programming skills every day.
+        </p>
+
+    </div>
+
+    <div class="skills">
+
+        <h2>My Skills</h2>
+
+        <ul id="skillsList">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>Python</li>
+        </ul>
+
+        <div class="add-skill">
+            <input type="text" id="skillInput" placeholder="Add a skill...">
+            <button id="addSkillBtn">Add Skill</button>
+        </div>
+
+    </div>
+
+    <div class="contact-form">
+
+        <h2>Contact Me</h2>
+
+        <form id="contactForm">
+
+            <label for="nameInput">Name</label>
+            <input type="text" id="nameInput" placeholder="Your name">
+            <span class="error" id="nameError"></span>
+
+            <label for="emailInput">Email</label>
+            <input type="text" id="emailInput" placeholder="Your email">
+            <span class="error" id="emailError"></span>
+
+            <label for="messageInput">Message</label>
+            <textarea id="messageInput" placeholder="Your message"></textarea>
+            <span class="error" id="messageError"></span>
+
+            <button type="submit">Send</button>
+
+        </form>
+
+        <p id="formSuccess" class="hidden">Thanks for your message! I'll get back to you soon.</p>
+
+    </div>
+
+     <footer>
+
+    <div class="contact">
+
+       
+        <h2>Contact</h2>
+        <p>I'd love to connect, Feel free to reach out or check out my work</p> <br>
+
+        <a href="https://www.linkedin.com/in/nadia-shaban-1621712a9/" target="_blank">
+            LinkedIn
+        </a>
+
+        |
+
+        <a href="https://github.com/nadia-shaban506-art" target="_blank">
+            GitHub
+        </a>
+
+    </div>
+    <br>
+    <p>&copy; 2026 Nadia Shaban.</p>
+    </footer>
+
+</div>
+
+<script>
+
+   
+
+
+    let hour = new Date().getHours();
+    let greetText = "";
+    if (hour < 12) {
+        greetText = "Good Morning!";
+    } else if (hour < 18) {
+        greetText = "Good Afternoon!";
+    } else {
+        greetText = "Good Evening!";
+    }
+    document.getElementById("greeting").textContent = greetText;
+
+    
+
+
+    let themeBtn = document.getElementById("themeBtn");
+    themeBtn.addEventListener("click", function() {
+        document.body.classList.toggle("dark-mode");
+        if (document.body.classList.contains("dark-mode")) {
+            themeBtn.textContent = "Light Mode";
+        } else {
+            themeBtn.textContent = "Dark Mode";
+        }
+    });
+
+   
+
+    let addSkillBtn = document.getElementById("addSkillBtn");
+    let skillInput = document.getElementById("skillInput");
+    let skillsList = document.getElementById("skillsList");
+
+    addSkillBtn.addEventListener("click", function() {
+        let newSkill = skillInput.value.trim();
+        if (newSkill === "") {
+            alert("Type a skill first");
+        } else {
+            let li = document.createElement("li");
+            li.textContent = newSkill;
+            skillsList.appendChild(li);
+            skillInput.value = "";
+        }
+    });
+
+ 
+
+
+    let contactForm = document.getElementById("contactForm");
+
+    contactForm.addEventListener("submit", function(e) {
+        e.preventDefault();
+
+        let name = document.getElementById("nameInput").value.trim();
+        let email = document.getElementById("emailInput").value.trim();
+        let message = document.getElementById("messageInput").value.trim();
+
+        let nameError = document.getElementById("nameError");
+        let emailError = document.getElementById("emailError");
+        let messageError = document.getElementById("messageError");
+        nameError.textContent = "";
+        emailError.textContent = "";
+        messageError.textContent = "";
+
+        let valid = true;
+
+        if (name === "") {
+            nameError.textContent = "Please enter your name.";
+            valid = false;
+        }
+        if (!email.includes("@") || !email.includes(".")) {
+            emailError.textContent = "Please enter a valid email.";
+            valid = false;
+        }
+        if (message.length < 15) {
+            messageError.textContent = "Message is too short.";
+            valid = false;
+        }
+
+        if (valid) {
+            document.getElementById("formSuccess").classList.remove("hidden");
+            contactForm.reset();
+        }
+    });
+
+</script>
+
+</body>
+</html>
